@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.12 on linux)" generated="2025-12-11T14:32:14.376620" rpa="false" schemaversion="5">
+<suite id="s1" name="Main" source="/home/test/main.robot">
+<test id="s1-t1" name="Open Google In Chromium" line="11">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-12-11T14:32:14.668706" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fe88d121340&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-12-11T14:32:14.667328" elapsed="0.001462"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$chrome_options.add_argument('--no-sandbox')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-12-11T14:32:14.669186" elapsed="0.000692"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$chrome_options.add_argument('--disable-dev-shm-usage')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-12-11T14:32:14.670185" elapsed="0.000546"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$chrome_options.add_argument('--disable-gpu')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-12-11T14:32:14.671025" elapsed="0.000393"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$chrome_options.add_argument('--headless')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-12-11T14:32:14.671802" elapsed="0.000416"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>setattr($chrome_options, 'binary_location', '${CHROME_BINARY}')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-12-11T14:32:14.672483" elapsed="0.000607"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-12-11T14:32:14.674049" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>executable_path=${CHROMEDRIVER_PATH}</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-12-11T14:32:14.673390" elapsed="1.170937"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-12-11T14:32:15.846671" level="INFO">Opening url 'https://www.google.com'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-11T14:32:15.846072" elapsed="1.233823"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2025-12-11T14:32:17.130533" level="INFO">${title} = Google</msg>
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-12-11T14:32:17.081606" elapsed="0.049060"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-12-11T14:32:17.233554" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-12-11T14:32:17.131316" elapsed="0.102571"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-11T14:32:17.235096" level="INFO">Page title is: Google</msg>
+<arg>Page title is: ${title}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-11T14:32:17.234502" elapsed="0.000887"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-12-11T14:32:19.236225" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-12-11T14:32:17.235696" elapsed="2.000854"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-11T14:32:19.237352" elapsed="0.085876"/>
+</kw>
+<doc>Opens Google homepage in Chromium browser on Alpine Linux</doc>
+<status status="PASS" start="2025-12-11T14:32:14.664868" elapsed="4.659039"/>
+</test>
+<status status="PASS" start="2025-12-11T14:32:14.378981" elapsed="4.945776"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Main" id="s1" pass="1" fail="0" skip="0">Main</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
