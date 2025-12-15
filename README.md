@@ -1,5 +1,3 @@
----
-
 ## Docker Setup
 
 ### docker-robot-selenium
@@ -14,5 +12,3 @@ docker build -t <image_name> .
 ```sh
 docker container run -it -v "/root":/home/test <image_name>
 ```
-
----
